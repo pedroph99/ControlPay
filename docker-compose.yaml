@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: controlpay
+      POSTGRES_PASSWORD: C0ntr4lP4y!
+      POSTGRES_DB: controlpaydb
+    ports:
+      - "5432:5432"
+    volumes:
+      # dados do banco (persistência)
+      - postgres_data:/var/lib/postgresql/data
+      # scripts de inicialização
+      - ./db/init:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:
