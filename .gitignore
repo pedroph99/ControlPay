@@ -1,0 +1,21 @@
+# Node/JS artefacts
+node_modules
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Build outputs
+dist
+client/**/dist
+
+# Environment files
+.env
+.env.local
+client/api/.env
+client/web/.env
+
+# IDE/editor
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json
